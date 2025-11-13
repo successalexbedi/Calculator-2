@@ -1,0 +1,135 @@
+:root {
+    --bg: #e0e5ec;
+    --panel: #f0f3f7;
+    --text: #1f2937;
+    --btn: #f0f3f7;
+    --btn-hover: #e0e5ec;
+    --shadow-light: rgba(255, 255, 255, 0.7);
+    --shadow-dark: rgba(0, 0, 0, 0.2);
+}
+
+body.dark {
+    --bg: #0f172a;
+    --panel: #1e293b;
+    --text: #e2e8f0;
+    --btn: #1e293b;
+    --btn-hover: #334155;
+    --shadow-light: rgba(255, 255, 255, 0.05);
+    --shadow-dark: rgba(0, 0, 0, 0.6);
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "SF Pro", "Segoe UI", sans-serif;
+    transition:
+        background 0.3s,
+        color 0.3s;
+}
+
+.calculator {
+    background: var(--panel);
+    padding: 30px 20px;
+    border-radius: 30px;
+    width: 280px;
+    position: relative;
+    box-shadow:
+        8px 8px 20px var(--shadow-dark),
+        -8px -8px 20px var(--shadow-light);
+    transition:
+        box-shadow 0.3s,
+        background 0.3s;
+}
+
+#calc-display {
+    width: 100%;
+    height: 70px;
+    /* increased height */
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    /* enough padding for text */
+    font-size: 28px;
+    font-weight: 500;
+    text-align: right;
+    border: none;
+    border-radius: 20px;
+    background: var(--panel);
+    color: var(--text);
+    box-shadow:
+        inset 5px 5px 12px var(--shadow-dark),
+        inset -5px -5px 12px var(--shadow-light);
+    transition: all 0.3s;
+    line-height: 1;
+    /* fixes vertical centering */
+}
+
+#calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+button {
+    height: 60px;
+    font-size: 20px;
+    border: none;
+    border-radius: 20px;
+    background: var(--btn);
+    color: var(--text);
+    cursor: pointer;
+    box-shadow:
+        5px 5px 10px var(--shadow-dark),
+        -5px -5px 10px var(--shadow-light);
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: var(--btn-hover);
+    box-shadow:
+        3px 3px 6px var(--shadow-dark),
+        -3px -3px 6px var(--shadow-light);
+}
+
+button:active {
+    box-shadow:
+        inset 3px 3px 6px var(--shadow-dark),
+        inset -3px -3px 6px var(--shadow-light);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 16px;
+    user-select: none;
+}
+
+#calc-display {
+    width: 90%;
+    height: 50px;
+    /* smaller height */
+    margin-bottom: 15px;
+    /* slightly smaller spacing */
+    padding: 10px 15px;
+    /* less padding for a tighter look */
+    font-size: 22px;
+    /* smaller font size */
+    font-weight: 500;
+    text-align: right;
+    border: none;
+    border-radius: 15px;
+    /* slightly smaller radius to match smaller input */
+    background: var(--panel);
+    color: var(--text);
+    box-shadow:
+        inset 3px 3px 8px var(--shadow-dark),
+        inset -3px -3px 8px var(--shadow-light);
+    transition: all 0.3s;
+    line-height: 1;
+    /* vertical centering */
+}
